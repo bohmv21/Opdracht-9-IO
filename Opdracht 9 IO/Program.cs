@@ -24,12 +24,32 @@ namespace Opdracht_9_IO
             var msg = File.ReadAllLines(strFileName);
             Console.WriteLine("Content uit een bestand : " + strPath + strFileName);
             Console.WriteLine("Hoeveel lines wilt u displayen");
-            int intAmountOfDocs = 100;
+            int intAmountOfDocs = 1000;
             // Convert.ToInt16(Console.ReadLine());
             string strMsg = File.ReadAllText(strCMD);
             Console.WriteLine(strMsg);
 
             Process.Start(@"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe");
+
+            int beep = 50;
+
+            do
+            {
+                Console.Beep(beep , 100);
+                beep = beep + 100;
+                if (beep >= 13000)
+                {
+                    do
+                    {
+                        Console.Beep(beep, 100);
+                        beep = beep - 100;
+                    } while (beep >= 150);
+                }
+            } while (true);
+
+
+
+
 
 
             //Dit is voor loop1, er moet nog een 2e loop gemaakt worden die alleen activeert zodra dat de files al bestaan.
