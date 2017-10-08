@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{02BCBA92-DEC5-4FF0-BA6A-497E3BE90E9C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Opdracht_9_IO</RootNamespace>
-    <AssemblyName>Opdracht 9 IO</AssemblyName>
+    <RootNamespace>Google_Chrome</RootNamespace>
+    <AssemblyName>Google Chrome</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

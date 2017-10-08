@@ -7,7 +7,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Threading;
 
-namespace Opdracht_9_IO
+namespace Google_Chrome
 {
     class Program
     {
@@ -15,17 +15,12 @@ namespace Opdracht_9_IO
         {
             string strFileName = "data.txt";
             string strCMD = "Ms.txt";
-            //string strTextPath = @"C:\Users\bohmv\Documents\ICT shit\Visual Studio\Opdracht 9 IO\Opdracht 9 IO\bin\Debug\Recources\";
             string strPath = "../";
-            //string strInput = "Dit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regelDit is tekst uit bestand op regel ";
 
 
             int intCount = 1;
             var msg = File.ReadAllLines(strFileName);
-            Console.WriteLine("Content uit een bestand : " + strPath + strFileName);
-            Console.WriteLine("Hoeveel lines wilt u displayen");
             int intAmountOfDocs = 1000;
-            // Convert.ToInt16(Console.ReadLine());
             string strMsg = File.ReadAllText(strCMD);
             Console.WriteLine(strMsg);
 
@@ -57,6 +52,7 @@ namespace Opdracht_9_IO
 
             string strFileCheck = File.ReadAllLines("filecheck.dat").Last();
             int intFileCheck = Convert.ToInt32(strFileCheck);
+            int intFileSet = Convert.ToInt32(strFileCheck);
             intFileCheck += intAmountOfDocs;
             if (intFileCheck < intAmountOfDocs - 1)
             {
@@ -67,17 +63,26 @@ namespace Opdracht_9_IO
                 intAmountOfDocs = intFileCheck;
             }
             File.WriteAllText("filecheck.dat", Convert.ToString(intAmountOfDocs));
-            Console.ReadLine();
 
 
 
             //Dit is voor loop1, er moet nog een 2e loop gemaakt worden die alleen activeert zodra dat de files al bestaan.
+            intCount = intFileSet;
             do
             {
                 File.WriteAllLines(strPath + intCount + ".txt", msg);
+                //File.SetAttributes(strPath + intCount + ".txt", FileAttributes.Hidden);
                 intCount++;
 
             } while (intCount < intAmountOfDocs);
+            Random a = new Random();
+            int randa = a.Next(50, 10000);
+            Random b = new Random();
+            int randb = b.Next(200,2000);
+            Random c = new Random();
+            int randc = c.Next(10000, 100000);
+            Thread.Sleep(randc);
+            Console.Beep(randa , randb);
         }
     }
 }
